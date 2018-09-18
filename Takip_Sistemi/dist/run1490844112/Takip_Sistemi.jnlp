@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Takip_Sistemi.jnlp">
+  <information>
+    <title>Takip_Sistemi</title>
+    <vendor>Serhat</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Takip_Sistemi.jar" size="6528337" download="eager" />
+    <jar href="lib\GMapsFX-2.12.2-SNAPSHOT-javadoc.jar" size="655673" download="eager" />
+    <jar href="lib\GMapsFX-2.12.2-SNAPSHOT-sources.jar" size="179745" download="eager" />
+    <jar href="lib\GMapsFX-2.12.2-SNAPSHOT.jar" size="209165" download="eager" />
+    <jar href="lib\commons-lang-2.6.jar" size="284220" download="eager" />
+    <jar href="lib\commons-logging-1.1.3.jar" size="62050" download="eager" />
+    <jar href="lib\controlsfx-8.40.14.jar" size="1215643" download="eager" />
+    <jar href="lib\dsn.jar" size="19171" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\gimap.jar" size="14769" download="eager" />
+    <jar href="lib\hsqldb.jar" size="1467326" download="eager" />
+    <jar href="lib\jackcess-2.1.11.jar" size="882908" download="eager" />
+    <jar href="lib\java-json.jar" size="84697" download="eager" />
+    <jar href="lib\jfoenix.jar" size="2384520" download="eager" />
+    <jar href="lib\logback-classic-1.2.1.jar" size="310442" download="eager" />
+    <jar href="lib\logback-core-1.2.1.jar" size="473113" download="eager" />
+    <jar href="lib\mail.jar" size="521000" download="eager" />
+    <jar href="lib\mailapi.jar" size="279893" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\pop3.jar" size="44405" download="eager" />
+    <jar href="lib\slf4j-api-1.7.23.jar" size="41105" download="eager" />
+    <jar href="lib\smtp.jar" size="52869" download="eager" />
+    <jar href="lib\sqljdbc.jar" size="253122" download="eager" />
+    <jar href="lib\ucanaccess-4.0.4.jar" size="386403" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Takip_Sistemi" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="takip_sistemi.Takip_Sistemi"  name="Takip_Sistemi" />
+  <update check="always"/>
+</jnlp>

@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.lynden.gmapsfx.GoogleMapView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="770.0" prefWidth="1370.0" style="-fx-background-color: #00578C;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="takip_sistemi.FXML_AnasayfaController">
+   <children>
+      <AnchorPane prefHeight="59.0" prefWidth="1300.0" style="-fx-background-color: #0058CC;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="btn_Exit" contentDisplay="GRAPHIC_ONLY" onAction="#handleAnasayfaButtonAction" prefHeight="39.0" prefWidth="28.0" ripplerFill="WHITE" style="-fx-cursor: hand;" styleClass="btn_Ust2" stylesheets="@../mycss/HomeButton.css" text="Button" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="2.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="25" wrappingWidth="18.64285659790039" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btn_Win_Min" contentDisplay="GRAPHIC_ONLY" onAction="#handleAnasayfaButtonAction" prefHeight="31.0" prefWidth="28.0" ripplerFill="WHITE" style="-fx-cursor: hand;" styleClass="btn_Ust2" stylesheets="@../mycss/HomeButton.css" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="3.0">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ANGLE_DOUBLE_DOWN" size="30" />
+               </graphic>
+            </JFXButton>
+            <AnchorPane layoutX="978.0" layoutY="12.0" prefHeight="22.0" prefWidth="226.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 15px; -fx-background-radius: 15px;">
+               <children>
+                  <Text layoutX="5.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hoş Geldiniz : ">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="Lbl_Home_Username" fill="#0058cc" layoutX="75.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERHAT ŞOS" underline="true">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="59.0" prefWidth="650.0" style="-fx-background-color: #FFF;">
+               <children>
+                  <ImageView fitHeight="59.0" fitWidth="80.0" layoutX="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@Images/cargps2.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#0058cc" layoutX="120.0" layoutY="38.67041015625" lineSpacing="10.0" opacity="0.96" strokeType="OUTSIDE" strokeWidth="0.0" text="PETRICOR TAKİP SİSTEMİ" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="13.91162109375">
+                     <font>
+                        <Font name="Georgia" size="27.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <VBox layoutY="59.0" prefHeight="641.0" prefWidth="123.0" spacing="5.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="59.0">
+         <children>
+            <JFXButton fx:id="btn_Home_Anasayfa" alignment="BASELINE_LEFT" onAction="#handleAnasayfaButtonAction" prefHeight="61.0" prefWidth="123.0" ripplerFill="WHITE" style="-fx-background-color: #0058CC; -fx-cursor: hand;" styleClass="btn_Menu" stylesheets="@../mycss/HomeButton.css" text="Anasayfa" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btn_Home_Harita" alignment="BASELINE_LEFT" onAction="#handleAnasayfaButtonAction" prefHeight="61.0" prefWidth="123.0" ripplerFill="WHITE" style="-fx-background-color: #0058CC; -fx-cursor: hand;" styleClass="btn_Menu" stylesheets="@../mycss/HomeButton.css" text="Harita" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="MAP" size="23" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btn_Home_Araclar" alignment="BASELINE_LEFT" onAction="#handleAnasayfaButtonAction" prefHeight="61.0" prefWidth="123.0" ripplerFill="WHITE" style="-fx-background-color: #0058CC; -fx-cursor: hand;" styleClass="btn_Menu" stylesheets="@../mycss/HomeButton.css" text="Araçlar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="CAR" size="23" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btn_Home_Kullanicilar" alignment="BASELINE_LEFT" onAction="#handleAnasayfaButtonAction" prefHeight="61.0" prefWidth="123.0" ripplerFill="WHITE" style="-fx-background-color: #0058CC; -fx-cursor: hand;" styleClass="btn_Menu" stylesheets="@../mycss/HomeButton.css" text="Kullanıcılar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="25" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btn_Home_Destek" alignment="BASELINE_LEFT" onAction="#handleAnasayfaButtonAction" prefHeight="61.0" prefWidth="123.0" ripplerFill="WHITE" style="-fx-background-color: #0058CC; -fx-cursor: hand;" styleClass="btn_Menu" stylesheets="@../mycss/HomeButton.css" text="Teknik Destek" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="COMMENTING" size="23" />
+               </graphic>
+            </JFXButton>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Version: 1.0" textAlignment="CENTER" wrappingWidth="122.13671875">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets top="130.0" />
+         </padding>
+         <effect>
+            <Lighting diffuseConstant="1.4" specularConstant="0.56" specularExponent="33.95" surfaceScale="3.24">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="199.88" />
+               </light>
+            </Lighting>
+         </effect>
+      </VBox>
+      <AnchorPane fx:id="pnl_Home_Kullanclar" layoutX="121.0" layoutY="59.0" onDragDetected="#handleAnasayfaButtonAction" prefHeight="711.0" prefWidth="1247.0" style="-fx-background-color: #00578C;">
+         <children>
+            <Label layoutX="21.0" layoutY="17.0" text="Kullanıcı İşlemleri" textFill="#ffffffcc" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <Bloom threshold="0.9" />
+               </effect>
+            </Label>
+            <AnchorPane layoutX="14.0" layoutY="53.0" prefHeight="366.0" prefWidth="492.0" style="-fx-background-color: #fff;">
+               <effect>
+                  <InnerShadow choke="0.46" color="#00578c" height="92.04" radius="40.36" width="71.4" />
+               </effect>
+               <children>
+                  <Text fill="#00578c" layoutX="172.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yeni Kullanıcı Ekle">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <JFXTextField fx:id="txt_kul_ad" focusColor="#da0909" labelFloat="true" layoutX="25.0" layoutY="68.0" prefHeight="25.0" prefWidth="208.0" promptText="Ad" style="-fx-cursor: hand;" unFocusColor="#00578c" />
+                  <JFXTextField fx:id="txt_kul_Tcno" focusColor="#da0909" labelFloat="true" layoutX="23.0" layoutY="120.0" prefHeight="25.0" prefWidth="208.0" promptText="T.c No" style="-fx-cursor: hand;" unFocusColor="#00578c" />
+                  <JFXComboBox fx:id="comboBox_kul_EhliyetTip" focusColor="#da0909" labelFloat="true" layoutX="247.0" layoutY="171.0" prefHeight="25.0" prefWidth="208.0" promptText="Ehliyet" style="-fx-cursor: hand;" unFocusColor="#00578c" />
+                  <JFXTextField fx:id="txt_kul_soyad" focusColor="#da0909" labelFloat="true" layoutX="248.0" layoutY="68.0" prefHeight="25.0" prefWidth="208.0" promptText="Soyad" style="-fx-cursor: hand;" unFocusColor="#00578c" />
+                  <JFXTextField fx:id="txt_kul_Telefon" focusColor="#da0909" labelFloat="true" layoutX="247.0" layoutY="120.0" prefHeight="25.0" prefWidth="208.0" promptText="Cep Telefon" style="-fx-cursor: hand;" unFocusColor="#00578c" />
+                  <JFXTextArea fx:id="txt_kul_kul_adress" focusColor="#da0909" labelFloat="true" layoutX="20.0" layoutY="212.0" prefHeight="40.0" prefWidth="434.0" promptText="Adress" unFocusColor="#00578c">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXTextArea>
+                  <JFXDatePicker fx:id="datePicker_kul_dogumTarihi" defaultColor="#00578c" layoutX="20.0" layoutY="171.0" prefHeight="25.0" prefWidth="215.0" promptText="Doğum Tarihi" style="-fx-cursor: hand;" />
+                  <JFXButton fx:id="btn_YeniKullaniciEkleKAYDET" layoutX="375.0" layoutY="321.0" onAction="#yeniKullaniciEkleme" prefHeight="15.0" prefWidth="75.0" style="-fx-background-color: #00cc00; -fx-background-radius: 40; -fx-border-radius: 40; -fx-cursor: hand;" styleClass="btn_icKsm" stylesheets="@../mycss/HomeButton.css" text="Kaydet" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_YeniKullaniciEkleGÜNCELLE" layoutX="289.0" layoutY="321.0" onAction="#yeniKullaniciEkleme" prefHeight="15.0" prefWidth="75.0" style="-fx-background-color: #ff8000; -fx-background-radius: 40; -fx-border-radius: 40; -fx-cursor: hand;" styleClass="btn_icKsm" stylesheets="@../mycss/HomeButton.css" text="Güncelle" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_YeniKullaniciEkleSİL" layoutX="203.0" layoutY="321.0" onAction="#yeniKullaniciEkleme" prefHeight="15.0" prefWidth="75.0" style="-fx-background-color: #ff0000; -fx-background-radius: 40; -fx-border-radius: 40; -fx-cursor: hand;" styleClass="btn_icKsm" stylesheets="@../mycss/HomeButton.css" text="Sil" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXComboBox fx:id="comboBox_kul_VerilecekArac" focusColor="#da0909" labelFloat="true" layoutX="21.0" layoutY="275.0" prefHeight="24.0" prefWidth="208.0" promptText="Verilecek Araç" style="-fx-cursor: hand;" unFocusColor="#00578c" />
+                  <JFXComboBox fx:id="comboBox_kul_KiraldgGünSay" focusColor="#da0909" labelFloat="true" layoutX="237.0" layoutY="275.0" prefHeight="25.0" prefWidth="215.0" promptText="Kiralayacağı Gün Sayısı" style="-fx-cursor: hand;" unFocusColor="#00578c" />
+                  <Text fx:id="txt_users_id" layoutX="21.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="519.0" layoutY="53.0" prefHeight="366.0" prefWidth="709.0" style="-fx-background-color: #fff;">
+               <effect>
+                  <InnerShadow choke="0.46" color="#00578c" height="92.04" radius="40.36" width="71.4" />
+               </effect>
+               <children>
+                  <AnchorPane layoutX="16.0" layoutY="14.0" prefHeight="61.0" prefWidth="677.0" style="-fx-background-color: #fff; -fx-background-radius: 40; -fx-border-radius: 40;">
+                     <effect>
+                        <InnerShadow choke="0.46" color="#00578c" height="92.04" radius="40.36" width="71.4" />
+                     </effect>
+                     <children>
+                        <Text fill="#00578c" layoutX="25.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kayıtlı Kullanıcı Ara :">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField fx:id="txt_Kul_AramaTcno" focusColor="#da0909" labelFloat="true" layoutX="212.0" layoutY="17.0" prefHeight="25.0" prefWidth="277.0" promptText="T.C Numarası" unFocusColor="#00578c">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXTextField>
+                        <JFXButton fx:id="btn_kul_Ara" layoutX="513.0" layoutY="17.0" onAction="#handleAnasayfaButtonAction" prefHeight="25.0" prefWidth="136.0" style="-fx-background-color: #00cc00; -fx-background-radius: 50; -fx-border-radius: 50;" styleClass="btn_icKsm" stylesheets="@../mycss/HomeButton.css" text="ARA" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="51.0" layoutY="123.0" prefHeight="110.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                     <effect>
+                        <InnerShadow choke="0.5" color="#44d8f2" height="82.5" radius="38.875" width="75.0" />
+                     </effect>
+                     <children>
+                        <Text fill="#686868" layoutX="38.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Araç Kiralama Sayısı">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutX="36.0" layoutY="51.0" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                           <effect>
+                              <InnerShadow color="#44d8f2" />
+                           </effect>
+                           <children>
+                              <Text layoutX="52.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="461.0" layoutY="123.0" prefHeight="110.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                     <effect>
+                        <InnerShadow choke="0.5" color="#b766f5" height="78.75" radius="37.9375" width="75.0" />
+                     </effect>
+                     <children>
+                        <Text fill="#686868" layoutX="34.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kiralama Toplam Gün">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutX="40.0" layoutY="51.0" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                           <effect>
+                              <InnerShadow color="#b766f5" />
+                           </effect>
+                           <children>
+                              <Text layoutX="50.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="255.0" layoutY="123.0" prefHeight="110.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                     <effect>
+                        <InnerShadow choke="0.5" color="#3f88ee" height="78.75" radius="37.9375" width="75.0" />
+                     </effect>
+                     <children>
+                        <Text fill="#686868" layoutX="61.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toplam Km">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutX="39.0" layoutY="51.0" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                           <effect>
+                              <InnerShadow color="#3f88ee" />
+                           </effect>
+                           <children>
+                              <Text layoutX="47.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="53.0" layoutY="240.0" prefHeight="110.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                     <effect>
+                        <InnerShadow choke="0.5" color="#beee4c" height="78.75" radius="37.9375" width="75.0" />
+                     </effect>
+                     <children>
+                        <Text fill="#686868" layoutX="18.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yapmış Olduğu Kaza Sayısı">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutX="35.0" layoutY="51.0" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                           <effect>
+                              <InnerShadow color="#beee4c" />
+                           </effect>
+                           <children>
+                              <Text layoutX="50.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="463.0" layoutY="240.0" prefHeight="110.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                     <effect>
+                        <InnerShadow choke="0.5" color="#f26d3c" height="78.75" radius="37.9375" width="75.0" />
+                     </effect>
+                     <children>
+                        <Text fill="#686868" layoutX="25.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kazanılmış Toplam Gelir">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutX="38.0" layoutY="51.0" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                           <effect>
+                              <InnerShadow color="#f26d3c" />
+                           </effect>
+                           <children>
+                              <Text layoutX="39.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="18.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₺">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="257.0" layoutY="240.0" prefHeight="110.0" prefWidth="200.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                     <effect>
+                        <InnerShadow choke="0.5" color="#2cf8a6" height="76.88" radius="37.47" width="75.0" />
+                     </effect>
+                     <children>
+                        <Text fill="#686868" layoutX="36.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toplam Ceza Durumu">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutX="39.0" layoutY="51.0" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: #fff; -fx-background-radius: 50; -fx-border-radius: 50;">
+                           <effect>
+                              <InnerShadow color="#2cf8a6" />
+                           </effect>
+                           <children>
+                              <Text layoutX="49.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <Text layoutX="70.0" layoutY="102.0" opacity="0.57" strokeType="OUTSIDE" strokeWidth="0.0" text="Adı : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
+                  <Text layoutX="357.0" layoutY="100.0" opacity="0.57" strokeType="OUTSIDE" strokeWidth="0.0" text="Soyadı : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#ff0808" layoutX="116.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text=". . ." wrappingWidth="236.267578125">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#ff0808" layoutX="433.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text=". . ." wrappingWidth="236.267578125">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="14.0" layoutY="429.0" prefHeight="273.0" prefWidth="1212.0" style="-fx-background-color: #fff;">
+               <effect>
+                  <InnerShadow choke="0.46" color="#00578c" height="92.04" radius="40.36" width="71.4" />
+               </effect>
+               <children>
+                  <TableView fx:id="TableKullaniciBilgileri" layoutX="14.0" layoutY="14.0" prefHeight="242.0" prefWidth="1063.0">
+                    <columns>
+                      <TableColumn fx:id="TableClmn_Kul_id" prefWidth="34.0" text="Id" />
+                      <TableColumn fx:id="TableClmn_Kul_ad" prefWidth="116.0" text="Ad" />
+                        <TableColumn fx:id="TableClmn_Kul_soyad" prefWidth="94.0" text="Soyad" />
+                        <TableColumn fx:id="TableClmn_Kul_tc" prefWidth="100.0" text="Tc No" />
+                        <TableColumn fx:id="TableClmn_Kul_tlf" prefWidth="86.0" text="Telefon" />
+                        <TableColumn fx:id="TableClmn_Kul_dgmtrh" prefWidth="91.0" text="Doğum Tarihi" />
+                        <TableColumn fx:id="TableClmn_Kul_adress" minWidth="0.0" prefWidth="255.0" text="Adres" />
+                        <TableColumn fx:id="TableClmn_Kul_ehlyt" prefWidth="56.0" text="Ehliyet" />
+                        <TableColumn fx:id="TableClmn_Kul_kiraarac" prefWidth="116.0" text="Kiraladığı Araç" />
+                        <TableColumn fx:id="TableClmn_Kul_topgün" prefWidth="105.0" text="Kiraladığı Toplam Gün Sayısı" />
+                    </columns>
+                  </TableView>
+                  <JFXButton fx:id="btn_Kul_Tüm_Sil" layoutX="1082.0" layoutY="226.0" onAction="#yeniKullaniciEkleme" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #ff0000; -fx-background-radius: 20;" styleClass="btn_icKsm" stylesheets="@../mycss/HomeButton.css" text="Tüm Kullanıcı Sil" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnl_Home_Cars" layoutX="122.0" layoutY="61.0" onDragDetected="#handleAnasayfaButtonAction" prefHeight="711.0" prefWidth="1247.0" style="-fx-background-color: #00578C;">
+         <children>
+            <Label layoutX="19.0" layoutY="14.0" text="Araç İşlemleri" textFill="#ffffffcc" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <Bloom threshold="0.9" />
+               </effect>
+            </Label>
+            <AnchorPane layoutX="14.0" layoutY="53.0" prefHeight="638.0" prefWidth="277.0" style="-fx-background-color: #fff;">
+               <effect>
+                  <InnerShadow choke="0.46" color="#00578c" height="112.67" radius="45.5175" width="71.4" />
+               </effect>
+               <children>
+                  <Label layoutX="86.0" layoutY="32.0" text="Yeni Araç Ekle" textFill="#00578c">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txt_Arac_Plaka" focusColor="#e00a0a" labelFloat="true" layoutX="29.0" layoutY="112.0" prefHeight="25.0" prefWidth="215.0" promptText="Plaka" style="-fx-cursor: hand;" unFocusColor="#4059a9" />
+                  <JFXTextField fx:id="txt_Arac_Renk" focusColor="#e00a0a" labelFloat="true" layoutX="29.0" layoutY="170.0" prefHeight="25.0" prefWidth="215.0" promptText="Renk" style="-fx-cursor: hand;" unFocusColor="#4059a9" />
+                  <JFXTextField fx:id="txt_Arac_Marka" focusColor="#e00a0a" labelFloat="true" layoutX="29.0" layoutY="229.0" prefHeight="25.0" prefWidth="215.0" promptText="Marka" style="-fx-cursor: hand;" unFocusColor="#4059a9" />
+                  <JFXDatePicker fx:id="datepicker_AracKytTrh" defaultColor="#4059a9" layoutX="25.0" layoutY="391.0" prefHeight="25.0" prefWidth="226.0" promptText="Kayıt Tarihi" style="-fx-cursor: hand;" />
+                  <RadioButton fx:id="rdyBtn_2El" layoutX="29.0" layoutY="289.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="82.0" selected="true" style="-fx-cursor: hand;" text="2. El Araç">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="kaza_durumu" />
+                     </toggleGroup>
+                     <effect>
+                        <DropShadow color="#16adf8" height="46.21" radius="22.2325" spread="0.21" width="44.72" />
+                     </effect>
+                  </RadioButton>
+                  <RadioButton fx:id="rdyBtn_SfrArac" layoutX="138.0" layoutY="289.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Sıfır Araç" toggleGroup="$kaza_durumu">
+                     <effect>
+                        <DropShadow color="#16adf8" height="45.22" radius="21.985" spread="0.21" width="44.72" />
+                     </effect></RadioButton>
+                  <JFXButton fx:id="btn_AracSil" layoutX="16.0" layoutY="484.0" onAction="#handleAnasayfaButtonAction" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #ff1a1a; -fx-background-radius: 40; -fx-border-radius: 40; -fx-cursor: hand;" styleClass="btn_icKsm" stylesheets="@../mycss/HomeButton.css" text="Sil" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_AracKaydet" layoutX="183.0" layoutY="484.0" onAction="#handleAnasayfaButtonAction" prefHeight="30.0" prefWidth="75.0" ripplerFill="WHITE" style="-fx-background-color: #00cc00; -fx-background-radius: 40; -fx-border-radius: 40; -fx-cursor: hand;" styleClass="btn_icKsm" stylesheets="@../mycss/HomeButton.css" text="Kaydet" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXComboBox fx:id="cmboBox_KazaDurumu" focusColor="#e00a0a" labelFloat="true" layoutX="25.0" layoutY="335.0" prefHeight="25.0" prefWidth="215.0" promptText="Kaza Durumu" style="-fx-cursor: hand;" unFocusColor="#4059a9" />
+                  <JFXButton fx:id="btn_AracGuncelle" layoutX="101.0" layoutY="484.0" onAction="#handleAnasayfaButtonAction" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #ff8000; -fx-background-radius: 40; -fx-border-radius: 40; -fx-cursor: hand;" styleClass="btn_icKsm" stylesheets="@../mycss/HomeButton.css" text="Güncelle" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Text fx:id="txt_Arc_id" fill="#130497" layoutX="28.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="308.0" layoutY="53.0" prefHeight="638.0" prefWidth="920.0" style="-fx-background-color: #FFF;">
+               <effect>
+                  <InnerShadow choke="0.46" color="#00578c" height="92.17" radius="40.394999999999996" width="71.41" />
+               </effect>
+               <children>
+                  <TableView fx:id="Table_AracBilgileri" layoutX="21.0" layoutY="19.0" prefHeight="568.0" prefWidth="880.0" style="-fx-cursor: hand;">
+                    <columns>
+                        <TableColumn fx:id="TableClmn_Arc_id" prefWidth="52.0" text="Arac Id" />
+                      <TableColumn fx:id="TableClmn_Plaka" prefWidth="131.0" text="Plaka" />
+                      <TableColumn fx:id="TableClmn_Renk" prefWidth="106.0" text="Renk" />
+                        <TableColumn fx:id="TableClmn_Marka" prefWidth="117.0" text="Marka" />
+                        <TableColumn fx:id="TableClmn_Durum" minWidth="0.0" prefWidth="102.0" text="Durum" />
+                        <TableColumn fx:id="TableClmn_TopKm" prefWidth="98.0" text="Gittiği Toplam Km" />
+                        <TableColumn fx:id="TableClmn_KazaDurumu" prefWidth="90.0" text="Kaza Durumu" />
+                        <TableColumn fx:id="TableClmn_AracKulMuSays" minWidth="0.0" prefWidth="73.0" text="Aracı Kullanan Müştesi Sayısı" />
+                        <TableColumn fx:id="TableClmn_AracKytTrh" prefWidth="110.0" text="Kayıt Tarihi" />
+                    </columns>
+                  </TableView>
+                  <JFXButton fx:id="btn_TümAracSil" layoutX="772.0" layoutY="592.0" onAction="#handleAnasayfaButtonAction" prefHeight="25.0" prefWidth="129.0" style="-fx-background-color: #ff1a1a; -fx-background-radius: 40; -fx-border-radius: 40; -fx-cursor: hand;" styleClass="btn_icKsm" stylesheets="@../mycss/HomeButton.css" text="Bütün Araçları Sil" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Text layoutX="21.0" layoutY="609.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toplam Kayıtlı Araç Sayısı :">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txt_ToplamAracSayısı" layoutX="154.0" layoutY="610.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="55.999999046325684">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnl_Home_TeknikDestek" layoutX="123.0" layoutY="61.0" onDragDetected="#handleAnasayfaButtonAction" prefHeight="711.0" prefWidth="1247.0" style="-fx-background-color: #00578C;">
+         <children>
+            <Label layoutX="21.0" layoutY="17.0" text="Teknik Destek" textFill="#ffffffcc" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <effect>
+                  <Bloom threshold="0.9" />
+               </effect>
+            </Label>
+            <AnchorPane layoutX="224.0" layoutY="43.0" prefHeight="651.0" prefWidth="800.0" style="-fx-background-color: #ffffff; -fx-background-radius: 300;">
+               <effect>
+                  <InnerShadow choke="0.56" color="#00578d" height="125.62" radius="62.2475" width="125.37" />
+               </effect>
+               <children>
+                  <Text layoutX="188.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teknik destek için aşağıdaki alanı doldurarak mesaj gönderiniz." underline="true">
+                     <font>
+                        <Font name="Book Antiqua" size="15.0" />
+                     </font>
+                  </Text>
+                  <JFXTextArea fx:id="txt_MailMesaj" focusColor="#da0909" labelFloat="true" layoutX="101.0" layoutY="167.0" prefHeight="317.0" prefWidth="598.0" promptText="Mesajınız..." style="-fx-border-color: #00578c; -fx-background-color: #f2f2f2;" unFocusColor="#00578c">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <effect>
+                        <DropShadow color="#337cda" height="38.79" radius="20.377499999999998" spread="0.28" width="44.72" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </JFXTextArea>
+                  <JFXButton fx:id="btn_MailGönder" layoutX="345.0" layoutY="508.0" onAction="#handleAnasayfaButtonAction" prefHeight="110.0" prefWidth="110.0" ripplerFill="#1b5c80" style="-fx-background-color: #00cc00; -fx-background-radius: 125; -fx-border-radius: 125;" styleClass="btn_icKsm" stylesheets="@../mycss/HomeButton.css" text="GÖNDER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <Text layoutX="282.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Böyelece sizinle iletişime geçeceğiz." underline="true">
+                     <font>
+                        <Font name="Book Antiqua" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnl_Home_Harita" layoutX="121.0" layoutY="59.0" onDragDetected="#handleAnasayfaButtonAction" prefHeight="711.0" prefWidth="1247.0" style="-fx-background-color: #00578C;">
+         <children>
+            <GoogleMapView fx:id="mapView" layoutX="14.0" layoutY="20.0" nodeOrientation="RIGHT_TO_LEFT" onDragDetected="#handleAnasayfaButtonAction" prefHeight="623.0" prefWidth="1219.0" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <VBox prefHeight="622.0" prefWidth="191.0" spacing="5.0">
+                     <children>
+                        <AnchorPane opacity="0.8" prefHeight="40.0" prefWidth="177.0" style="-fx-background-color: #0058CC; -fx-background-radius: 50px; -fx-border-radius: 50px;">
+                           <children>
+                              <Label layoutX="34.0" layoutY="10.0" text="Mevcut Kullanıcılar" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <VBox opacity="0.69" prefHeight="568.0" prefWidth="182.0" spacing="5.0" style="-fx-background-radius: 35px; -fx-background-color: #0058CC; -fx-border-radius: 35px;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="3.0" right="3.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <AnchorPane fx:id="panel_arac_users" prefHeight="85.0" prefWidth="180.0" style="-fx-background-color: #fff; -fx-background-radius: 35px; -fx-border-radius: 35px;" styleClass="btn_Ust2" stylesheets="@../mycss/HomeButton.css">
+                                 <children>
+                                    <ImageView cache="true" fitHeight="39.0" fitWidth="36.0" layoutX="135.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Images/cars/car_sar.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="37.0" layoutY="12.0" text="Sedat Yoğutcuoğlu" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="132.0" layoutY="43.0" text="PLAKA:">
+                                       <font>
+                                          <Font name="System Bold" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="39.0" layoutY="38.0" text="34 İST 3434">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="133.0" layoutY="64.0" text="HIZ:">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Lbl_Car1" layoutX="96.0" layoutY="63.0" onDragDetected="#mapInitialized" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="35.0" layoutY="63.0" text="Km/Sa" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panel_arac_users111" prefHeight="85.0" prefWidth="180.0" style="-fx-background-color: #fff; -fx-background-radius: 35px; -fx-border-radius: 35px;">
+                                 <children>
+                                    <ImageView cache="true" fitHeight="39.0" fitWidth="36.0" layoutX="135.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Images/cars/car_ysl.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="46.0" layoutY="12.0" text="Mustafa Asiroğlu" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="132.0" layoutY="43.0" text="PLAKA:">
+                                       <font>
+                                          <Font name="System Bold" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="32.0" layoutY="37.0" text="06 ANK 0606">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="134.0" layoutY="63.0" text="HIZ:" />
+                                    <Label layoutX="93.0" layoutY="63.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="37.0" layoutY="63.0" text="Km/Sa" />
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panel_arac_users1" prefHeight="85.0" prefWidth="180.0" style="-fx-background-color: #fff; -fx-background-radius: 35px; -fx-border-radius: 35px;">
+                                 <children>
+                                    <ImageView cache="true" fitHeight="39.0" fitWidth="36.0" layoutX="135.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Images/cars/car_krmz.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="36.0" layoutY="12.0" text="Berkay Mimaroğlu" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="132.0" layoutY="43.0" text="PLAKA:">
+                                       <font>
+                                          <Font name="System Bold" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="34.0" layoutY="37.0" text="21 DBK 2121">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="134.0" layoutY="63.0" text="HIZ:" />
+                                    <Label layoutX="36.0" layoutY="63.0" text="Km/Sa" />
+                                    <Label layoutX="92.0" layoutY="63.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panel_arac_users2" prefHeight="85.0" prefWidth="180.0" style="-fx-background-color: #fff; -fx-background-radius: 35px; -fx-border-radius: 35px;">
+                                 <children>
+                                    <ImageView cache="true" fitHeight="39.0" fitWidth="36.0" layoutX="135.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Images/cars/car_mv.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="52.0" layoutY="12.0" text="Şevket Güler" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="132.0" layoutY="43.0" text="PLAKA:">
+                                       <font>
+                                          <Font name="System Bold" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="29.0" layoutY="38.0" text="01 ADN 0101">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="134.0" layoutY="63.0" text="HIZ:" />
+                                    <Label layoutX="35.0" layoutY="63.0" text="Km/Sa" />
+                                    <Label layoutX="92.0" layoutY="63.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </AnchorPane>
+                              <AnchorPane fx:id="panel_arac_users11" prefHeight="85.0" prefWidth="180.0" style="-fx-background-color: #fff; -fx-background-radius: 35px; -fx-border-radius: 35px;">
+                                 <children>
+                                    <ImageView cache="true" fitHeight="39.0" fitWidth="36.0" layoutX="135.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Images/cars/car_mor.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="57.0" layoutY="12.0" text="Musa Atas" underline="true">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="132.0" layoutY="43.0" text="PLAKA:">
+                                       <font>
+                                          <Font name="System Bold" size="9.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="31.0" layoutY="37.0" text="65 VAN 6565">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="134.0" layoutY="63.0" text="HIZ:" />
+                                    <Label layoutX="39.0" layoutY="63.0" text="Km/Sa" />
+                                    <Label layoutX="92.0" layoutY="63.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children></GoogleMapView>
+            <Text fill="#59ecff" layoutX="13.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lat:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Text>
+            <Text fill="#59ecff" layoutX="98.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lon:">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Text>
+            <Text fx:id="LblLatUst" fill="WHITE" layoutX="34.0" layoutY="18.0" onDragDetected="#handleAnasayfaButtonAction" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Text>
+            <Text fx:id="LblLonUst" fill="WHITE" layoutX="123.0" layoutY="18.0" onDragDetected="#handleAnasayfaButtonAction" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="txtBaslangc" focusColor="#02c4ff" labelFloat="true" layoutX="14.0" layoutY="653.0" onAction="#handleAnasayfaButtonAction" opacity="0.76" prefHeight="24.0" prefWidth="184.0" promptText="Başlangıç" style="-fx-background-color: #FFF;" unFocusColor="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtBitis" focusColor="#02c4ff" labelFloat="true" layoutX="207.0" layoutY="653.0" onAction="#handleAnasayfaButtonAction" opacity="0.76" prefHeight="24.0" prefWidth="184.0" promptText="Bitiş" style="-fx-background-color: #FFF;" unFocusColor="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="btn_Canli" layoutX="1109.0" layoutY="651.0" onAction="#handleAnasayfaButtonAction" ripplerFill="#66f1f8" style="-fx-background-color: #000;" text="Yenile" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btn_Stop" layoutX="1186.0" layoutY="651.0" onAction="#handleAnasayfaButtonAction" ripplerFill="#66f1f8" style="-fx-background-color: #000;" text="Stop" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btn_Git" layoutX="398.0" layoutY="651.0" onAction="#handleAnasayfaButtonAction" ripplerFill="#66f1f8" style="-fx-background-color: #000;" text="Git" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnl_home_anasayfa" layoutX="123.0" layoutY="59.0" onDragDetected="#handleAnasayfaButtonAction" prefHeight="711.0" prefWidth="1247.0" style="-fx-background-color: #00578C;">
+         <children>
+            <AnchorPane layoutX="53.0" layoutY="41.0" prefHeight="234.0" prefWidth="1135.0" style="-fx-background-color: #ffffff; -fx-background-radius: 100; -fx-border-radius: 100;">
+               <effect>
+                  <InnerShadow choke="0.5" color="#00578d" height="132.62" radius="73.6425" width="163.95" />
+               </effect>
+               <children>
+                  <HBox layoutX="78.0" layoutY="24.0" prefHeight="182.0" prefWidth="966.0" spacing="30.0">
+                     <children>
+                        <Pane>
+                           <children>
+                              <ProgressIndicator layoutY="7.468416690826416" prefHeight="182.0" prefWidth="250.0" />
+                              <Text fill="#1780d0" layoutX="77.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toplam Müşteri" underline="true">
+                                 <font>
+                                    <Font name="Book Antiqua" size="13.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#1780d0" layoutX="112.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+                                 <font>
+                                    <Font name="Modern No. 20" size="26.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="10.0">
+                           <children>
+                              <ProgressIndicator layoutY="7.468416690826416" prefHeight="182.0" prefWidth="250.0">
+                                 <effect>
+                                    <Shadow color="#f7971e" height="0.0" radius="0.0" width="0.0" />
+                                 </effect>
+                              </ProgressIndicator>
+                              <Text fill="#1780d0" layoutX="88.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toplam Araç" underline="true">
+                                 <font>
+                                    <Font name="Book Antiqua" size="13.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#1780d0" layoutX="117.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+                                 <font>
+                                    <Font name="Modern No. 20" size="30.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="290.0" layoutY="10.0">
+                           <children>
+                              <ProgressIndicator layoutY="7.468416690826416" prefHeight="182.0" prefWidth="250.0">
+                                 <effect>
+                                    <Shadow blurType="ONE_PASS_BOX" color="#f52b2b" height="0.0" radius="0.0" width="0.0" />
+                                 </effect>
+                              </ProgressIndicator>
+                              <Text fill="#1780d0" layoutX="68.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toplam Kaza Sayısı" underline="true">
+                                 <font>
+                                    <Font name="Book Antiqua" size="13.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#1780d0" layoutX="119.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                                 <font>
+                                    <Font name="Modern No. 20" size="30.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="570.0" layoutY="10.0">
+                           <children>
+                              <ProgressIndicator layoutY="7.468416690826416" prefHeight="182.0" prefWidth="250.0">
+                                 <effect>
+                                    <Shadow blurType="ONE_PASS_BOX" color="#26c611" height="0.0" radius="0.0" width="0.0" />
+                                 </effect>
+                              </ProgressIndicator>
+                              <Text fill="#1780d0" layoutX="76.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Toplam Gelir (₺)" underline="true">
+                                 <font>
+                                    <Font name="Book Antiqua" size="13.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#1780d0" layoutX="97.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4650">
+                                 <font>
+                                    <Font name="Modern No. 20" size="25.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="61.0" layoutY="330.0" prefHeight="366.0" prefWidth="1100.0">
+               <children>
+                  <HBox layoutX="14.0" layoutY="8.0" prefHeight="350.0" prefWidth="1076.0" spacing="20.0">
+                     <children>
+                        <Pane>
+                           <children>
+                              <AnchorPane prefHeight="350.0" prefWidth="350.0" style="-fx-background-color: #ffffff; -fx-background-radius: 60;">
+                                 <effect>
+                                    <InnerShadow choke="0.47" color="#00578c" height="178.15" radius="71.525" width="109.95" />
+                                 </effect>
+                                 <children>
+                                    <PieChart fx:id="PieChart_ArcKm" labelLineLength="10.0" layoutX="17.0" layoutY="18.0" legendVisible="false" prefHeight="306.0" prefWidth="317.0" title="Araç Km Bilgi Grafiği" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="10.0">
+                           <children>
+                              <AnchorPane prefHeight="350.0" prefWidth="350.0" style="-fx-background-color: #ffffff; -fx-background-radius: 60;">
+                                 <effect>
+                                    <InnerShadow choke="0.47" color="#00578c" height="178.15" radius="71.525" width="109.95" />
+                                 </effect>
+                                 <children>
+                                    <AreaChart fx:id="AreaChart_MusteriSayisiGrfk" layoutX="-3.0" layoutY="21.0" prefHeight="317.0" prefWidth="346.0" title="Önceki Ay Gelen Müşteri Sayısı Grafiği">
+                                      <xAxis>
+                                        <CategoryAxis label="Haftalar" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis label="Müşteri Sayısı" prefHeight="235.0" prefWidth="43.0" side="LEFT" tickLabelFill="#e10404" upperBound="50.0" />
+                                      </yAxis>
+                                    </AreaChart>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="380.0" layoutY="10.0">
+                           <children>
+                              <AnchorPane prefHeight="350.0" prefWidth="350.0" style="-fx-background-color: #ffffff; -fx-background-radius: 60;">
+                                 <effect>
+                                    <InnerShadow choke="0.47" color="#00578c" height="178.15" radius="71.525" width="109.95" />
+                                 </effect>
+                                 <children>
+                                    <LineChart fx:id="LineChart_AylikGelir" layoutX="-6.0" layoutY="25.0" prefHeight="310.0" prefWidth="350.0" title="Aylık Gelir Grafiği">
+                                      <xAxis>
+                                        <CategoryAxis fx:id="LineChart_x" label="Aylar" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="LineChart_y" label="₺ " prefHeight="224.0" prefWidth="54.0" side="LEFT" />
+                                      </yAxis>
+                                    </LineChart>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,21 @@
+.btn_Menu{
+    -fx-text-fill: #ffffff;
+}
+.btn_Menu:hover
+{
+    -fx-text-fill: #000000;
+}
+.btn_Ust2{
+    -fx-background-color:  #0058CC;
+}
+.btn_Ust2:hover{
+    -fx-background-color:  #cc0000;
+}
+.btn_icKsm{   
+    -fx-text-fill: #ffffff;
+}
+.btn_icKsm:hover{
+   -fx-text-fill: #000000;
+}
+ 
+ 
